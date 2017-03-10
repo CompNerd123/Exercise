@@ -1,0 +1,139 @@
+
+import java.util.Scanner; 
+
+public class Person {    
+     private String strFirstName = ""; 
+     private String strLastName = "";   
+     private String strMiddleName = ""; 
+     private int intBirthYear = 1970;
+     private int intBirthMonth = 1; 
+     private int intBirthDay = 1;   
+     private char chrGender = ' ';  
+     private int intHeightIN = 72; 
+     private int intWeightLBS = 165;
+
+     Scanner objInput=new Scanner(System.in);
+
+    public void setFirstName(String pstrFirstName) {
+      
+        this.strFirstName = pstrFirstName;  
+     }     
+       
+    public String getFirstName(){
+
+        System.out.println("Whats your first Name?");
+
+        strFirstName = objInput.next();
+
+        return this.strFirstName;  
+     }
+  
+  
+    public void setMiddleName(String pstrMiddleName) { 
+       
+        this.strMiddleName = pstrMiddleName;   
+     }  
+                   
+    public String getMiddleName() {   
+
+        System.out.println("Whats your middle name?");
+
+        strMiddleName = objInput.next();
+
+        return this.strMiddleName; 
+     }
+
+      public void setLastName(String pstrLastName) {
+       this.strLastName = pstrLastName;     
+     }  
+  
+    public String getLastName() { 
+
+         System.out.println("Whats your last name?");
+        strLastName = objInput.next();
+
+        return this.strLastName;
+     }
+     public void setWeightLBS(int pintWeightLBS){
+         intWeightLBS=pintWeightLBS;
+     }
+     public int getWeightLBS(){
+         
+         System.out.println("whats your weight in lbs?");
+         
+         intWeightLBS=objInput.nextInt();
+         
+         return intWeightLBS;
+     }
+
+    public void setHeightIN(int pintHeightIN){
+        intHeightIN = pintHeightIN;
+    }
+
+    public int getHeightIN(){
+        return intHeightIN;
+    }
+
+     public void setBirthYear(int pintBirthYear) {
+        intBirthYear = pintBirthYear;
+    }
+
+    public int getBirthYear(){
+        return intBirthYear;
+    }
+
+    public void setBirthTotal(int pintBirthDay, int pintBirthMonth, int pintBirthYear){
+       
+        //this.setBirthDay(pintBirthDay);
+
+        //this.setBirthMonth(pintBirthMonth);
+
+        this.setBirthYear(pintBirthYear);
+    }
+public void setGender(char pstrGender){
+        chrGender = pstrGender;
+    }
+
+    public String getGender(){
+
+    
+
+        if(chrGender == 'M'){
+            return "Male";
+        } else if (chrGender == 'F'){
+            return "Female";
+        } else
+            return "Neutral";
+    }
+
+
+    public String getInfo(){
+        return "\n"+
+       
+        "Your Name:"+this.getFirstName()+" "+this.getMiddleName()+" "+this.getLastName()+"\n" +
+        "Your birthday: " + this.getBirthYear() + "\n" +
+        "Your gender: " + this.getGender() + "\n" +
+        "Your weight: " + this.getWeightLBS() + "\n" +
+        "Your height: " + this.getHeightIN();
+    }
+     
+    public void setInfo(String pstrFirstName,
+     String pstrMiddleName,
+     String pstrLastName)
+      {
+        this.setFirstName(pstrFirstName);
+
+        this.setMiddleName(pstrMiddleName);
+
+        this.setLastName(pstrLastName);
+
+        this.setWeightLBS(intWeightLBS);
+
+        this.setHeightIN(intHeightIN);
+
+        this.setGender('M');
+
+        this.setBirthTotal(2017,3,8);
+    }
+                
+ }
